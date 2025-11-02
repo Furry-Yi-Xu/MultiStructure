@@ -1,0 +1,29 @@
+Structures:
+  Test:
+    main_block:
+      material: minecraft:smooth_stone
+    sub_block:
+      - offset: -1,2,-1
+        material: craftengine:default:chinese_lantern
+      - offset: 1,-1,-1
+        material: craftengine:default:palm_planks
+      - offset: 0,-1,1
+        material: craftengine:default:palm_planks
+      - offset: 1,-1,0
+        material: craftengine:default:palm_planks
+      - offset: -1,2,1
+        material: craftengine:default:chinese_lantern
+      - offset: 1,-1,1
+        material: craftengine:default:palm_planks
+      - offset: -1,-1,-1
+        material: craftengine:default:palm_planks
+      - offset: 1,2,-1
+        material: craftengine:default:chinese_lantern
+      - offset: -1,-1,0
+        material: craftengine:default:palm_planks
+      - offset: 0,-1,-1
+        material: craftengine:default:palm_planks
+      - offset: -1,-1,1
+        material: craftengine:default:palm_planks
+      - offset: 1,2,1
+        material: craftengine:default:chinese_lantern

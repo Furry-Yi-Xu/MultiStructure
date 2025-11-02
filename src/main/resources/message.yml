@@ -1,0 +1,7 @@
+Prefix: "&7[&b多结构建筑&7]"
+
+Command:
+  only-player: "%Prefix% &c该命令只能由玩家执行！"
+  Usage-Command: "%Prefix% &c有效命令为 /multiStructure <命令>"
+  No-Permission-Command: "%Prefix% &c你没有权限使用命令"
+  Succeed-Reload: "%Prefix% &a所有配置文件重载成功！"

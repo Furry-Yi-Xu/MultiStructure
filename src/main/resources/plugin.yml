@@ -1,0 +1,14 @@
+name: MultiStructure
+version: '1.0'
+main: com.yixu.MultiStructure
+api-version: '1.21'
+
+commands:
+  MultiStructure:
+    description: "MultiStructure 插件主命令"
+    aliases: [msc]
+    default: op
+
+depend:
+  - CraftEngine
+  - DecentHolograms

@@ -1,0 +1,7 @@
+Actions:
+  Test:
+    actions:
+      - type: 'command'
+        commands:
+          - 'console: say Hello World'
+          - 'player: give %player_name% diamond 1'
