@@ -13,14 +13,11 @@ public final class MultiStructure extends JavaPlugin {
 
     private static MultiStructure instance;
 
-
     private ServerFileConfigManager serverFileConfigManager;
     private EventManager eventManager;
     private PlayerStatusManager playerStatusManager;
     private StructureDataManager structureDataManager;
     private StructureConfigManager structureConfigManager;
-
-
 
     @Override
     public void onEnable() {

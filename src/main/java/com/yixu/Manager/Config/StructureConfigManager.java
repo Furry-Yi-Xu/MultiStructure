@@ -98,7 +98,7 @@ public class StructureConfigManager {
         return configStructure.getStringList(structureName + "." + "sub_block");
     }
 
-    public boolean checkStructureNameIskExist(String structureName) {
+    public boolean checkStructureNameIskExisted(String structureName) {
         return structureNameList.contains(structureName);
     }
 

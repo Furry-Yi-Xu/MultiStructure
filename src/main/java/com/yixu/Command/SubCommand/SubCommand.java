@@ -35,7 +35,7 @@ public class SubCommand {
 
         if (playerStatus.equals(PlayerState.DISABLED)) {
             playerStatusManager.changePlayerStatus(uuid, PlayerState.ENABLED);
-            MultiStructure.getInstance().getStructureDataManager().clearAllPlayerBlockData(player);
+            MultiStructure.getInstance().getStructureDataManager().clearPlayerAllRecordBlockData(player);
             player.sendMessage("&a已开启创建记录模式\n左键 - 记录主方块，右键 - 记录副方块");
             return;
         }
@@ -79,7 +79,7 @@ public class SubCommand {
         String structureName = args[1];
 
         StructureConfigManager structureConfigManager = MultiStructure.getInstance().getStructureConfigManager();
-        boolean isExistedStructureName = structureConfigManager.checkStructureNameIskExist(structureName);
+        boolean isExistedStructureName = structureConfigManager.checkStructureNameIskExisted(structureName);
 
         if (isExistedStructureName) {
             player.sendMessage("&c这个结构名已经存在了，请重新输入！");
@@ -91,13 +91,25 @@ public class SubCommand {
         if (success) {
             BlockGlowEffect.hideAllGlowEffect(mainBlocks);
             BlockGlowEffect.hideAllGlowEffect(subBlocks);
-            MultiStructure.getInstance().getStructureDataManager().clearAllPlayerBlockData(player);
+            MultiStructure.getInstance().getStructureDataManager().clearPlayerAllRecordBlockData(player);
             player.sendMessage("§a结构已成功保存，已自动清理所有方块数据，自动关闭选择模式！");
         } else {
             player.sendMessage("§c保存结构时发生错误，请重新尝试生成！");
         }
 
         playerStatusManager.changePlayerStatus(uuid, PlayerState.DISABLED);
+    }
+
+    public void cancelCreateStructure(Player player) {
+        UUID uuid = player.getUniqueId();
+
+        PlayerStatusManager playerStatusManager = MultiStructure.getInstance().getPlayerStatusManager();
+        StructureDataManager structureDataManager = MultiStructure.getInstance().getStructureDataManager();
+
+        playerStatusManager.changePlayerStatus(uuid, PlayerState.DISABLED);
+        structureDataManager.clearPlayerAllRecordBlockData(player);
+
+        player.sendMessage("§a结构已取消创建，已自动清理所有方块数据，自动关闭选择模式！");
     }
 
 }

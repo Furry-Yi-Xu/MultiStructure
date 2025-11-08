@@ -9,6 +9,7 @@ import com.yixu.MultiStructure;
 import com.yixu.Util.Block.BlockGlowEffect;
 import com.yixu.Util.Block.ResolveBlockId;
 import com.yixu.Util.Structure.StructureCheck;
+import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
@@ -19,7 +20,6 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 
-import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
@@ -72,7 +72,6 @@ public class PlayerInteract implements Listener {
         }
 
         Set<String> findStructures = structureConfigManager.getStructuresByMaterial(blockIdWithNameSpace);
-
         String getStructureName = StructureCheck.checkStructure(findStructures, block);
 
         if (getStructureName.equals("null")) {

@@ -42,6 +42,10 @@ public class CommandManager implements CommandExecutor {
                 new SubCommand().saveStructure(player, args);
                 break;
 
+            case "cancel":
+                new SubCommand().cancelCreateStructure(player);
+                break;
+
             default:
                 MessageUtil.sendMessage(sender, "Command.Usage-Command");
                 return false;

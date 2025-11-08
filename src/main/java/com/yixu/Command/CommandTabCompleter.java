@@ -13,7 +13,8 @@ public class CommandTabCompleter implements TabCompleter {
     private final List<String> SUB_COMMANDS = Arrays.asList(
             "reload",
             "create",
-            "save"
+            "save",
+            "cancel"
 
     );
 

@@ -1,7 +1,6 @@
 package com.yixu.Manager.Player;
 
 import com.yixu.Interface.PlayerState;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
@@ -23,16 +22,7 @@ public class PlayerStatusManager {
     }
 
     public PlayerState getPlayerCurrentStatus(UUID uuid) {
-        checkPlayerStatusIsDisabled(uuid);
-        return recordPlayerStatus.get(uuid);
-    }
-
-    public void checkPlayerStatusIsDisabled(UUID uuid) {
-        PlayerState playerState = recordPlayerStatus.get(uuid);
-
-        if (playerState == null || playerState != PlayerState.DISABLED) {
-            recordPlayerStatus.put(uuid, PlayerState.ENABLED);
-        }
+        return recordPlayerStatus.getOrDefault(uuid, PlayerState.DISABLED);
     }
 
     public void changePlayerStatus(UUID uuid, PlayerState playerState) {

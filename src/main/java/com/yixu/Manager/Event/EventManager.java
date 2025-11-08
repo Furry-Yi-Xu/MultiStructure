@@ -1,7 +1,6 @@
 package com.yixu.Manager.Event;
 
 import com.yixu.Event.Vanilla.PlayerInteract;
-import com.yixu.Event.Vanilla.PlayerJoin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,7 +17,6 @@ public class EventManager {
         PluginManager pluginManager = plugin.getServer().getPluginManager();
 
         pluginManager.registerEvents(new PlayerInteract(), plugin);
-        pluginManager.registerEvents(new PlayerJoin(), plugin);
 
     }
 

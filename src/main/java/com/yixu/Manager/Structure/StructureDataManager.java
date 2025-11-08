@@ -63,7 +63,7 @@ public class StructureDataManager {
         return playerSubBlocks.getOrDefault(player.getUniqueId(), Collections.emptyMap());
     }
 
-    public void clearAllPlayerBlockData(Player player) {
+    public void clearPlayerAllRecordBlockData(Player player) {
         UUID uuid = player.getUniqueId();
         playerMainBlocks.remove(uuid);
         playerSubBlocks.remove(uuid);
